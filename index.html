@@ -6,7 +6,7 @@
           content="width=device-width, initial-scale=1.0">
     <title>Яндекс.Дом</title>
     <link rel="preload" as="font" href="assets/lato.woff2" type="font/woff2" crossorigin="anonymous">
-    <script src="vendors/react-with-dom.js"></script>
+    <script src="vendors/react-with-dom.js" defer></script>
     <link rel="stylesheet" type="text/css" href="reset.css">
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
@@ -35,7 +35,7 @@
     </div>
 </footer>
 
-<script src="vendors/babel.min.js"></script>
+<script src="vendors/babel.min.js" defer></script>
 <script type="text/babel">
     function Header() {
         let [expanded, setExpanded] = React.useState(false);
@@ -252,6 +252,16 @@
             <section className="section main__general">
                 <h2 className="section__title section__title-header section__main-title">Главное</h2>
                 <div className="hero-dashboard">
+                    <div className="hero-dashboard__image-wrapper">
+                        <img
+                            className="hero-dashboard__image"
+                            srcSet="assets/bg@1x.png 320w, assets/bg@2x.png 800w"
+                            sizes="(max-width: 768px) 320w, 800px"
+                            src="assets/bg@2x.png"
+                            alt="Дождь"
+                        />
+                    </div>
+
                     <div className="hero-dashboard__primary">
                         <h3 className="hero-dashboard__title">Привет, Геннадий!</h3>
                         <p className="hero-dashboard__subtitle">Двери и окна закрыты, сигнализация включена.</p>
